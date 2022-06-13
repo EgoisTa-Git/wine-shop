@@ -114,7 +114,7 @@
           </div>
         </div>
         <div class="row">
-          
+          {% for _ in range(6) %}
           <div class="col-lg-4 mb-5 col-md-6">
             <div class="wine_v_1 text-center pb-4 pt-5">
               <img src="images/izabella.png" alt="Image" class="img-fluid">
@@ -127,72 +127,7 @@
               </div>
             </div>
           </div>
-          
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/izabella.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Изабелла</h3>
-                <p>
-                  Сорт винограда - Изабелла<br/>
-                  <span class="price">350 р.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/izabella.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Изабелла</h3>
-                <p>
-                  Сорт винограда - Изабелла<br/>
-                  <span class="price">350 р.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/izabella.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Изабелла</h3>
-                <p>
-                  Сорт винограда - Изабелла<br/>
-                  <span class="price">350 р.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/izabella.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Изабелла</h3>
-                <p>
-                  Сорт винограда - Изабелла<br/>
-                  <span class="price">350 р.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/izabella.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Изабелла</h3>
-                <p>
-                  Сорт винограда - Изабелла<br/>
-                  <span class="price">350 р.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -203,7 +138,7 @@
         <div class="row justify-content-center text-center align-items-center">
           <div class="col-md-8">
             <h2 style="font-size: 3rem;">проверено временем</h2>
-            <span class="sub-title" style="font-size: 2.5rem;">Уже 102 года
+            <span class="sub-title" style="font-size: 2.5rem;">Уже {{ age }}
               с вами</span>
           </div>
         </div>
