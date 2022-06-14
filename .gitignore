@@ -2,3 +2,5 @@ env/
 .vscode/
 .replit
 .idea/
+*.xlsx
+.~*
