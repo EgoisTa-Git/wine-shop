@@ -28,7 +28,7 @@ def sort_wines(wines_data_frame):
 if __name__ == '__main__':
     winery_age = get_winery_age(WINERY_FOUNDING_YEAR)
     wines_df = pandas.read_excel(
-        io='wine2.xlsx',
+        io='wine3.xlsx',
         na_values='nan',
         keep_default_na=False,
     )
