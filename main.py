@@ -28,7 +28,11 @@ def sort_wines(wines_data_frame):
 
 def parse_argument():
     parser = argparse.ArgumentParser(description='Сайт магазина авторского вина')
-    parser.add_argument('--wine', help='Excel-файл с ассортиментом продукции')
+    parser.add_argument(
+        '--wine',
+        default='wine.xlsx',
+        help='Excel-файл с ассортиментом продукции',
+    )
     arg = parser.parse_args()
     return arg.wine
 
@@ -36,8 +40,6 @@ def parse_argument():
 if __name__ == '__main__':
     winery_age = get_winery_age(WINERY_FOUNDING_YEAR)
     wine_io = parse_argument()
-    if not wine_io:
-        wine_io = 'wine.xlsx'
     wines_df = pandas.read_excel(
         io=wine_io,
         na_values='nan',
