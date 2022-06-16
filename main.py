@@ -1,3 +1,4 @@
+import argparse
 import datetime
 from collections import defaultdict
 from http.server import HTTPServer, SimpleHTTPRequestHandler
@@ -25,10 +26,20 @@ def sort_wines(wines_data_frame):
     return wines
 
 
+def parse_argument():
+    parser = argparse.ArgumentParser(description='Сайт магазина авторского вина')
+    parser.add_argument('--wine', help='Excel-файл с ассортиментом продукции')
+    arg = parser.parse_args()
+    return arg.wine
+
+
 if __name__ == '__main__':
     winery_age = get_winery_age(WINERY_FOUNDING_YEAR)
+    wine_io = parse_argument()
+    if not wine_io:
+        wine_io = 'wine.xlsx'
     wines_df = pandas.read_excel(
-        io='wine3.xlsx',
+        io=wine_io,
         na_values='nan',
         keep_default_na=False,
     )
