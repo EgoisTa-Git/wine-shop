@@ -21,8 +21,9 @@ def get_wines(wines_data_frame):
     wines_serial = wines_data_frame.to_dict(orient='records')
     wines = defaultdict(list)
     for wine in wines_serial:
-        key = list(wine.values())[0]
-        wines[key].append(wine)
+        for category, value in wine.items():
+            wines[value].append(wine)
+            break
     return wines
 
 
