@@ -17,7 +17,7 @@ def get_winery_age(founding_year):
         return f'{age} лет'
 
 
-def sort_wines(wines_data_frame):
+def get_wines(wines_data_frame):
     wines_serial = wines_data_frame.to_dict(orient='records')
     wines = defaultdict(list)
     for wine in wines_serial:
@@ -45,7 +45,7 @@ if __name__ == '__main__':
         na_values='nan',
         keep_default_na=False,
     )
-    sorted_wines = sort_wines(wines_df)
+    sorted_wines = get_wines(wines_df)
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])
