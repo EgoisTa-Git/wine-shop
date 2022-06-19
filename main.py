@@ -40,13 +40,13 @@ def parse_argument():
 
 if __name__ == '__main__':
     winery_age = get_winery_age(WINERY_FOUNDING_YEAR)
-    wine_io = parse_argument()
+    wine_path = parse_argument()
     wines_df = pandas.read_excel(
-        io=wine_io,
+        io=wine_path,
         na_values='nan',
         keep_default_na=False,
     )
-    sorted_wines = get_wines(wines_df)
+    wines = get_wines(wines_df)
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])
@@ -54,7 +54,7 @@ if __name__ == '__main__':
     template = env.get_template('template.html')
     rendered_page = template.render(
         age=winery_age,
-        wines=sorted_wines,
+        wines=wines,
     )
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
