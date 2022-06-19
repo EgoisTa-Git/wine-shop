@@ -2,6 +2,7 @@ import argparse
 import datetime
 from collections import defaultdict
 from http.server import HTTPServer, SimpleHTTPRequestHandler
+from pprint import pprint
 
 import pandas
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -19,11 +20,12 @@ def get_winery_age(founding_year):
 
 def get_wines(wines_data_frame):
     wines_serial = wines_data_frame.to_dict(orient='records')
+    # pprint(wines_serial)
+    # print(type(wines_serial))
     wines = defaultdict(list)
     for wine in wines_serial:
-        for category, value in wine.items():
-            wines[value].append(wine)
-            break
+        category, *values = wine.values()
+        wines[category].append(wine)
     return wines
 
 
