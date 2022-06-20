@@ -2,7 +2,6 @@ import argparse
 import datetime
 from collections import defaultdict
 from http.server import HTTPServer, SimpleHTTPRequestHandler
-from pprint import pprint
 
 import pandas
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -20,8 +19,6 @@ def get_winery_age(founding_year):
 
 def get_wines(wines_data_frame):
     wines_serial = wines_data_frame.to_dict(orient='records')
-    # pprint(wines_serial)
-    # print(type(wines_serial))
     wines = defaultdict(list)
     for wine in wines_serial:
         category, *values = wine.values()
@@ -30,7 +27,9 @@ def get_wines(wines_data_frame):
 
 
 def parse_argument():
-    parser = argparse.ArgumentParser(description='Сайт магазина авторского вина')
+    parser = argparse.ArgumentParser(
+        description='Сайт магазина авторского вина "Новое русское вино"',
+    )
     parser.add_argument(
         '--wine',
         default='wine.xlsx',
