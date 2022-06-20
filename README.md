@@ -25,6 +25,12 @@ pip install -r requirements.txt
 ```shell
 python main.py
 ```
+_Примечание:_ возможно указать путь к Excel-файлу с ассортиментом (например, 
+так для файла "new_wines" в папке database): 
+: 
+```shell
+python main.py database/new_wines.xslx
+```
 - Перейдите на сайт по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ***
